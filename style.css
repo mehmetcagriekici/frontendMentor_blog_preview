@@ -121,6 +121,7 @@ img {
 /*header*/
 .header h3 {
   font-size: var(--header-size);
+  cursor: pointer;
 }
 
 .header h3:hover {
