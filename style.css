@@ -1,0 +1,177 @@
+/*imported font familes*/
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+/*root variables*/
+:root {
+  /*theme colors*/
+  --color-yellow: hsl(47, 88%, 63%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-gray-500: hsl(0, 0%, 42%);
+  --color-gray-950: hsl(0, 0%, 7%);
+
+  /*sizes*/
+  --card-width: 20rem;
+  --card-height: 32rem;
+  --image-width: 18rem;
+  --avatar-width: 3rem;
+
+  /*font sizes*/
+  --header-size: 1.4rem;
+  --secondary-text-size: 0.9rem; /*Smaller than paragraph, used for the name next to avatar*/
+  --paragraph-size: 1rem;
+
+  /*padding, gap*/
+  --card-padding: 1rem;
+  --process-padding: 0.5rem;
+  --card-gap: 1.5rem; /*vertical*/
+  --infromation-gap: 0.6rem; /*horizontal*/
+
+  /*border, shadow*/
+  --card-border-radius: 1.6rem;
+  --image-border-radius: 0.6rem;
+  --process-border-radius: 0.4rem;
+  --card-shadow: 0.8rem 0.8rem 0.1rem 0 var(--color-gray-950);
+}
+
+/*Default styles*/
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%; /*1rem = 10px*/
+  font-family: "Figtree", sans-serif; /*default font family*/
+  overflow: hidden;
+}
+
+main {
+  /*full-screen*/
+  height: 100dvh;
+  width: 100dvw;
+  /*center the card*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background color*/
+  background-color: var(--color-yellow);
+}
+
+img {
+  /*fit*/
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  padding: 0;
+}
+
+/*Card*/
+.card {
+  /*card size*/
+  width: var(--card-width);
+  height: var(--card-height);
+
+  /*one col flex*/
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: var(--card-gap);
+
+  /*padding*/
+  padding: var(--card-padding);
+
+  /*card background*/
+  background-color: var(--color-white);
+
+  /*border-shadow*/
+  border: 1px solid var(--color-gray-950);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+/*image container*/
+.image-container {
+  width: var(--image-width);
+  border-radius: var(--image-border-radius);
+}
+
+/*process*/
+.process {
+  background-color: var(--color-yellow);
+  padding: var(--process-padding);
+  border-radius: var(--process-border-radius);
+}
+
+.process p {
+  font-size: var(--paragraph-size);
+  font-weight: 700;
+  text-align: center;
+}
+
+/*date*/
+.date p {
+  font-size: var(--secondary-text-size);
+}
+
+/*header*/
+.header h3 {
+  font-size: var(--header-size);
+}
+
+/*text*/
+.text p {
+  font-size: var(--paragraph-size);
+  opacity: 80%;
+}
+
+/*information*/
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--infromation-gap);
+}
+
+.information p {
+  font-size: var(--secondary-text-size);
+  font-weight: 900;
+}
+
+/*avatar container*/
+.avatar {
+  width: var(--avatar-width);
+}
+
+/*footer*/
+.attribution {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+/*media queries, larger than a mobie phone*/
+@media (min-width: 375px) {
+  :root {
+    --card-height: 42rem;
+    --card-width: 36rem;
+    --image-width: 32rem;
+
+    --card-padding: 2rem;
+    --card-gap: 1.4rem;
+
+    --header-size: 1.8rem;
+    --secondary-text-size: 1.2rem;
+    --paragraph-size: 1.3rem;
+
+    --card-shadow: 1rem 1rem 0.1rem 0 var(--color-gray-950);
+  }
+
+  .image-container {
+    align-self: center;
+  }
+}
