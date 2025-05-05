@@ -123,6 +123,10 @@ img {
   font-size: var(--header-size);
 }
 
+.header h3:hover {
+  color: var(--color-yellow);
+}
+
 /*text*/
 .text p {
   font-size: var(--paragraph-size);
